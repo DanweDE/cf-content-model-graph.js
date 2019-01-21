@@ -1,7 +1,7 @@
-Reads a `input.csv` file in the same folder and creates [Graphviz] dot markup.
+Reads a `input.csv` file in the same folder and creates [Graphviz] dot markup. You can pipe the output directly to the `dot` command to generate a rendered graph:
 
 ```bash
-node src/index.js examples/space.cf-example-app.json | dot -o graph.svg -T svg -K neato
+node src/index.js | dot -o graph.svg -T svg -K neato
 ```
 
 
