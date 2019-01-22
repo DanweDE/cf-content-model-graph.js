@@ -12,8 +12,8 @@ csv()
 
 /**
  *
- * @param {Array<Object>} relations, array of:
- * { parent_ct_name, parent_ct_id, child_ct_name, child_ct_id }
+ * @param {Array<Object>} relations Example:
+ * [{ parent_ct_name, parent_ct_id, child_ct_name, child_ct_id }, ...]
  * @returns {string}
  */
 function buildGraphDOT (relations) {
@@ -32,8 +32,4 @@ function buildGraphDOT (relations) {
   const dotAll = `${dotNodes.join('\n')}\n\n${dotEdges.join('\n')}`
 
   return dot.digraph(dotAll)
-}
-
-function newlines (arr) {
-  return arr.join('\n')
 }
