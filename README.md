@@ -14,7 +14,7 @@ node src/index.js | dot -o graph.svg -T svg -K neato
 The generated dot markup can either be copy pasted to [viz-js.com](http://viz-js.com)
 or it can be processed by a local [Graphviz installation][install Graphviz]:
 
-```js
+```bash
 node src/index.js | dot -o graph.svg -T svg -K dot
 ```
 
