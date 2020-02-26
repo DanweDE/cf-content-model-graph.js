@@ -1,13 +1,24 @@
 const { reduce, map, uniq } = require('lodash')
+const minimist = require('minimist')
 const csv = require('csvtojson')
 const dot = require('./dotHelpers')
 
-const CSV_FILE = './input.csv'
+const DEFAULT_CSV_PATH = './input.csv'
+
+const args = minimist(process.argv.slice(2), {
+  default: {
+    file: DEFAULT_CSV_PATH
+  }
+})
+const csvFile = args.file
 
 csv()
-  .fromFile(CSV_FILE)
+  .fromFile(csvFile)
   .then(jsonObj => {
     console.log(buildGraphDOT(jsonObj))
+  }, (e) => {
+    const additionalHelp = csvFile === DEFAULT_CSV_PATH ? 'Use --file parameter to specify a .csv file path.' : ''
+    console.error(`Error: ${e.message} ${additionalHelp}`.trim())
   })
 
 /**

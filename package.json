@@ -1,17 +1,16 @@
 {
   "name": "cf-content-model-graph",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "dependencies": {
     "csvtojson": "^2.0.10",
     "lodash": "^4.17.15",
+    "minimist": "^1.2.0",
     "word-wrap": "^1.2.3"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC"
 }
